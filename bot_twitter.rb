@@ -1,7 +1,5 @@
 require "twitter"
 
-
-
 client.search("#learntocode", lang: "fr").take(10).each do |tweet|
   puts "#{tweet.user.screen_name}: #{tweet.text}"
   client.favorite(tweet)
@@ -9,7 +7,6 @@ client.search("#learntocode", lang: "fr").take(10).each do |tweet|
       in_reply_to_status_id: tweet.id)
 end
 
-#run(client)
 
 =begin
 journalists = ["@Sharonwaj","@mcsonkin","@pverduzier","@emiliel3","@Julien_MARION","@SophiFay","@bdelombre","@annalecerf","@AdriaBudry","@DejNikolic","@iJaffre","@CyrusleVirus","@GPardigon","@e_vallerey","@IsabelleSouquet","@AudeDavidRossi","@Yoann_Pa",
@@ -36,7 +33,7 @@ journalists.each do |journalist|
   sleep(60)
   end
 
-
+#-----
 client.search("Web").take(15).each do |tweet|
   if tweet.user(journalists)
     client.favorite(tweet)
